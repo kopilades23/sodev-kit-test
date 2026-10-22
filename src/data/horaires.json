@@ -1,6 +1,6 @@
 {
   "annonce": {
-    "afficher": true,
+    "afficher": false,
     "texte": "test sodeev"
   },
   "jours": [
