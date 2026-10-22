@@ -1,6 +1,6 @@
 {
   "annonce": {
-    "afficher": false,
+    "afficher": true,
     "texte": "Fermeture exceptionnelle le 11 novembre"
   },
   "jours": [
