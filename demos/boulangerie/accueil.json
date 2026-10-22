@@ -1,0 +1,110 @@
+{
+  "seo": {
+    "titre": "Le Fournil de Jeanne — Boulangerie artisanale à Avon",
+    "description": "Boulangerie-pâtisserie artisanale à Avon : pains au levain naturel, viennoiseries pur beurre, pâtisseries et gâteaux d'anniversaire sur commande."
+  },
+  "hero": {
+    "titre": "Le bon pain, tous les matins",
+    "sous_titre": "Levain naturel, farines de meuniers d'Île-de-France et viennoiseries pur beurre, faits sur place chaque jour.",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff",
+    "image_alt": "Pains au levain et épis de blé sur une table en bois"
+  },
+  "prestations": {
+    "afficher": true,
+    "surtitre": "Au fournil",
+    "titre": "Nos spécialités",
+    "intro": "Tout est pétri, façonné et cuit sur place, du lundi au dimanche matin.",
+    "liste": [
+      {
+        "titre": "Pains au levain",
+        "description": "Tradition, campagne, seigle, graines : longue fermentation pour plus de goût.",
+        "prix": "Baguette tradition 1,30 €",
+        "image": "https://images.unsplash.com/photo-1549413468-cd78edb7e75c"
+      },
+      {
+        "titre": "Viennoiseries pur beurre",
+        "description": "Croissants, pains au chocolat, brioches feuilletées, cuits plusieurs fois par matinée.",
+        "prix": "Croissant 1,20 €",
+        "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a"
+      },
+      {
+        "titre": "Gâteaux sur commande",
+        "description": "Anniversaires, baptêmes, mariages : entremets et pièces montées, 48 h à l'avance.",
+        "prix": "À partir de 4 € la part",
+        "image": "https://images.unsplash.com/photo-1546237769-6f84ec1a512a"
+      }
+    ]
+  },
+  "carte": {
+    "afficher": false,
+    "menu": "La carte",
+    "surtitre": "",
+    "titre": "",
+    "intro": "",
+    "ardoise": {
+      "afficher": false,
+      "titre": "",
+      "texte": ""
+    },
+    "categories": [],
+    "note": ""
+  },
+  "atouts": {
+    "afficher": true,
+    "surtitre": "Notre engagement",
+    "titre": "Artisan boulanger, pour de vrai",
+    "liste": [
+      {
+        "titre": "Levain naturel",
+        "texte": "Une fermentation lente pour un pain plus digeste et plus savoureux."
+      },
+      {
+        "titre": "Farines locales",
+        "texte": "Moulins d'Île-de-France, blés cultivés sans traitement après récolte."
+      },
+      {
+        "titre": "Tout est fait ici",
+        "texte": "Aucun produit surgelé : pétri, façonné et cuit dans notre fournil."
+      }
+    ]
+  },
+  "apropos": {
+    "afficher": true,
+    "titre": "Jeanne, boulangère par passion",
+    "texte": "Après quinze ans dans de grandes maisons parisiennes, Jeanne a repris le fournil d'Avon en 2019.\n\nSon credo : du temps, de bonnes farines et un levain chouchouté chaque jour.",
+    "image": "https://images.unsplash.com/photo-1567042661848-7161ce446f85",
+    "image_alt": "Boulangère tenant un pain au levain"
+  },
+  "galerie": {
+    "afficher": true,
+    "surtitre": "La boutique",
+    "titre": "Sortis du four ce matin",
+    "images": [
+      "https://images.unsplash.com/photo-1608198093002-ad4e005484ec",
+      "https://images.unsplash.com/photo-1568254183919-78a4f43a2877",
+      "https://images.unsplash.com/photo-1623334044303-241021148842",
+      "https://images.unsplash.com/photo-1711672284661-bd70e38f31b2",
+      "https://images.unsplash.com/photo-1700915704616-b455b3679024",
+      "https://images.unsplash.com/photo-1566698629409-787a68fc5724"
+    ]
+  },
+  "zone": {
+    "afficher": false,
+    "titre": "Zone d'intervention",
+    "texte": "",
+    "communes": []
+  },
+  "avis": {
+    "afficher": true,
+    "titre": "Ils nous font confiance",
+    "texte": "Votre avis compte : retrouvez tous les avis de nos clients sur notre fiche Google."
+  },
+  "actualites": {
+    "titre": "Les nouvelles du fournil"
+  },
+  "contact": {
+    "titre": "Une commande, une question ?",
+    "texte": "Pour les gâteaux et grandes quantités, commandez 48 h à l'avance par téléphone ou via ce formulaire.",
+    "titre_formulaire": "Passer une commande"
+  }
+}

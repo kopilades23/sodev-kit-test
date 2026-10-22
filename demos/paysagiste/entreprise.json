@@ -1,0 +1,24 @@
+{
+  "nom": "Ferrand Paysage",
+  "activite": "Paysagiste",
+  "ville": "Nemours",
+  "slogan": "Création et entretien de jardins à Nemours et dans le sud Seine-et-Marne : plantations, terrasses, allées, élagage. Devis gratuit sur place.",
+  "telephone": "06 00 00 00 05",
+  "email": "contact@exemple.fr",
+  "action_principale": {
+    "texte": "Demander un devis",
+    "lien": "/#contact"
+  },
+  "adresse": {
+    "rue": "3 chemin des Prés",
+    "code_postal": "77140",
+    "ville": "Nemours"
+  },
+  "lien_google_maps": "https://www.google.com/maps/search/?api=1&query=3+chemin+des+Prés+77140+Nemours",
+  "lien_avis_google": "https://www.google.com/search?q=Ferrand+Paysage+Nemours",
+  "reseaux": {
+    "instagram": "https://www.instagram.com/",
+    "facebook": "https://www.facebook.com/",
+    "tiktok": ""
+  }
+}

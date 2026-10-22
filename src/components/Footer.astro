@@ -1,0 +1,36 @@
+---
+import Icone from './Icone.astro';
+import entreprise from '../data/entreprise.json';
+import technique from '../data/technique.json';
+const r = entreprise.reseaux;
+const a = entreprise.adresse;
+const annee = new Date().getFullYear();
+---
+<footer class="pied">
+  <div class="conteneur pied__grille">
+    <div>
+      <p class="pied__nom">{entreprise.nom}</p>
+      <p>{entreprise.activite} à {entreprise.ville}</p>
+      <address>{a.rue}<br />{a.code_postal} {a.ville}</address>
+    </div>
+    <div>
+      <p class="pied__titre">Contact</p>
+      <p><a href={`tel:${entreprise.telephone.replace(/[^\d+]/g, '')}`}>{entreprise.telephone}</a></p>
+      {entreprise.email && <p><a href={`mailto:${entreprise.email}`}>{entreprise.email}</a></p>}
+      <div class="pied__reseaux">
+        {r.instagram && <a href={r.instagram} aria-label="Instagram" rel="noopener" target="_blank"><Icone nom="instagram" /></a>}
+        {r.facebook && <a href={r.facebook} aria-label="Facebook" rel="noopener" target="_blank"><Icone nom="facebook" /></a>}
+        {r.tiktok && <a href={r.tiktok} aria-label="TikTok" rel="noopener" target="_blank"><Icone nom="tiktok" /></a>}
+      </div>
+    </div>
+    <div>
+      <p class="pied__titre">Informations</p>
+      <p><a href="/mentions-legales/">Mentions légales</a></p>
+      <p><a href="/confidentialite/">Confidentialité</a></p>
+    </div>
+  </div>
+  <div class="conteneur pied__bas">
+    <span>© {annee} {entreprise.nom}</span>
+    {technique.credit?.texte && <a href={technique.credit.lien} rel="noopener">{technique.credit.texte}</a>}
+  </div>
+</footer>

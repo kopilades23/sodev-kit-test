@@ -1,0 +1,24 @@
+{
+  "nom": "La Table de Léonie",
+  "activite": "Bistrot",
+  "ville": "Fontainebleau",
+  "slogan": "Bistrot de saison au cœur de Fontainebleau : cuisine du marché, vins de vignerons et ardoise qui change chaque jour.",
+  "telephone": "01 60 00 00 01",
+  "email": "bonjour@exemple.fr",
+  "action_principale": {
+    "texte": "Réserver une table",
+    "lien": "/#contact"
+  },
+  "adresse": {
+    "rue": "5 rue des Sablons",
+    "code_postal": "77300",
+    "ville": "Fontainebleau"
+  },
+  "lien_google_maps": "https://www.google.com/maps/search/?api=1&query=5+rue+des+Sablons+77300+Fontainebleau",
+  "lien_avis_google": "https://www.google.com/search?q=La+Table+de+Léonie+Fontainebleau",
+  "reseaux": {
+    "instagram": "https://www.instagram.com/",
+    "facebook": "https://www.facebook.com/",
+    "tiktok": ""
+  }
+}

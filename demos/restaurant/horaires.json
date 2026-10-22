@@ -1,0 +1,65 @@
+{
+  "annonce": {
+    "afficher": false,
+    "texte": ""
+  },
+  "jours": [
+    {
+      "jour": "Lundi",
+      "ferme": true,
+      "debut_1": "",
+      "fin_1": "",
+      "debut_2": "",
+      "fin_2": ""
+    },
+    {
+      "jour": "Mardi",
+      "ferme": false,
+      "debut_1": "12:00",
+      "fin_1": "14:00",
+      "debut_2": "19:00",
+      "fin_2": "22:00"
+    },
+    {
+      "jour": "Mercredi",
+      "ferme": false,
+      "debut_1": "12:00",
+      "fin_1": "14:00",
+      "debut_2": "19:00",
+      "fin_2": "22:00"
+    },
+    {
+      "jour": "Jeudi",
+      "ferme": false,
+      "debut_1": "12:00",
+      "fin_1": "14:00",
+      "debut_2": "19:00",
+      "fin_2": "22:00"
+    },
+    {
+      "jour": "Vendredi",
+      "ferme": false,
+      "debut_1": "12:00",
+      "fin_1": "14:00",
+      "debut_2": "19:00",
+      "fin_2": "22:30"
+    },
+    {
+      "jour": "Samedi",
+      "ferme": false,
+      "debut_1": "12:00",
+      "fin_1": "14:30",
+      "debut_2": "19:00",
+      "fin_2": "22:30"
+    },
+    {
+      "jour": "Dimanche",
+      "ferme": true,
+      "debut_1": "",
+      "fin_1": "",
+      "debut_2": "",
+      "fin_2": ""
+    }
+  ],
+  "precisions": "Service du midi de 12 h à 14 h, du soir à partir de 19 h."
+}

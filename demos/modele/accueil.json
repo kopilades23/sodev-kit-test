@@ -1,0 +1,110 @@
+{
+  "seo": {
+    "titre": "Maison Verveine — Fleuriste à Melun",
+    "description": "Fleuriste à Melun : bouquets de saison, compositions pour mariages et événements, livraison locale. Ouvert du mardi au dimanche."
+  },
+  "hero": {
+    "titre": "Des fleurs qui racontent la saison",
+    "sous_titre": "Bouquets frais, compositions sur mesure et conseils de fleuriste, au cœur de Melun.",
+    "image": "/images/hero.jpg",
+    "image_alt": "Bouquet de fleurs de saison sur le comptoir de la boutique"
+  },
+  "prestations": {
+    "afficher": true,
+    "surtitre": "Ce que nous proposons",
+    "titre": "Nos prestations",
+    "intro": "Des créations pour chaque occasion, préparées le jour même.",
+    "liste": [
+      {
+        "titre": "Bouquets de saison",
+        "description": "Composés chaque jour avec les plus belles fleurs du moment.",
+        "prix": "À partir de 25 €",
+        "image": "/images/prestation-1.jpg"
+      },
+      {
+        "titre": "Mariages et événements",
+        "description": "Bouquet de mariée, décoration de salle, boutonnières : devis gratuit sur rendez-vous.",
+        "prix": "Sur devis",
+        "image": "/images/prestation-2.jpg"
+      },
+      {
+        "titre": "Livraison à Melun et alentours",
+        "description": "Commandez par téléphone avant 12 h, nous livrons dans l'après-midi.",
+        "prix": "À partir de 8 €",
+        "image": "/images/prestation-3.jpg"
+      }
+    ]
+  },
+  "carte": {
+    "afficher": false,
+    "menu": "La carte",
+    "surtitre": "À la carte",
+    "titre": "Notre carte",
+    "intro": "",
+    "ardoise": {
+      "afficher": false,
+      "titre": "L'ardoise du jour",
+      "texte": ""
+    },
+    "categories": [],
+    "note": ""
+  },
+  "atouts": {
+    "afficher": true,
+    "surtitre": "Pourquoi nous choisir",
+    "titre": "Le soin du détail, à chaque bouquet",
+    "liste": [
+      {
+        "titre": "Fleurs fraîches chaque matin",
+        "texte": "Arrivages quotidiens, en priorité de producteurs français."
+      },
+      {
+        "titre": "Sur mesure",
+        "texte": "Chaque composition est adaptée à votre budget et à l'occasion."
+      },
+      {
+        "titre": "Livraison le jour même",
+        "texte": "Commandez avant 12 h, livré dans l'après-midi à Melun et alentours."
+      }
+    ]
+  },
+  "apropos": {
+    "afficher": true,
+    "titre": "Une boutique de quartier, un savoir-faire d'artisan",
+    "texte": "Depuis 2012, nous sélectionnons chaque matin des fleurs de producteurs français et européens.\n\nChaque bouquet est composé à la main, selon vos envies, votre budget et l'occasion. Mariage, anniversaire, deuil ou simple envie de couleur : nous prenons le temps de vous conseiller.",
+    "image": "/images/apropos.jpg",
+    "image_alt": "La fleuriste compose un bouquet dans l'atelier"
+  },
+  "galerie": {
+    "afficher": true,
+    "surtitre": "Galerie",
+    "titre": "Nos dernières créations",
+    "images": [
+      "/images/galerie-1.jpg",
+      "/images/galerie-2.jpg",
+      "/images/galerie-3.jpg",
+      "/images/galerie-4.jpg",
+      "/images/galerie-5.jpg",
+      "/images/galerie-6.jpg"
+    ]
+  },
+  "zone": {
+    "afficher": false,
+    "titre": "Zone d'intervention",
+    "texte": "",
+    "communes": []
+  },
+  "avis": {
+    "afficher": true,
+    "titre": "Ils nous font confiance",
+    "texte": "Votre avis compte : il aide d'autres clients à nous découvrir. Retrouvez tous les avis de nos clients sur notre fiche Google."
+  },
+  "actualites": {
+    "titre": "Les nouvelles de la boutique"
+  },
+  "contact": {
+    "titre": "Une question, une commande ?",
+    "texte": "Appelez-nous ou laissez-nous un message : nous vous répondons dans la journée.",
+    "titre_formulaire": "Envoyer un message"
+  }
+}

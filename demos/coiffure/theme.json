@@ -1,0 +1,13 @@
+{
+  "_note": "Identité visuelle du client. Polices disponibles : fraunces, playfair, inter, dmsans.",
+  "couleur_principale": "#1F1D1B",
+  "couleur_sur_principale": "#FFFFFF",
+  "couleur_accent": "#A9785A",
+  "couleur_fond": "#F6F2EE",
+  "couleur_surface": "#FFFFFF",
+  "couleur_texte": "#1A1817",
+  "couleur_texte_doux": "#5A5450",
+  "police_titres": "dmsans",
+  "police_texte": "inter",
+  "arrondi": "4px"
+}

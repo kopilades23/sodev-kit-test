@@ -1,0 +1,24 @@
+{
+  "nom": "Lefort Plomberie Chauffage",
+  "activite": "Plombier chauffagiste",
+  "ville": "Provins",
+  "slogan": "Dépannage, rénovation de salle de bain et chauffage à Provins et dans un rayon de 30 km. Devis gratuit sous 48 h.",
+  "telephone": "06 00 00 00 03",
+  "email": "contact@exemple.fr",
+  "action_principale": {
+    "texte": "Demander un devis",
+    "lien": "/#contact"
+  },
+  "adresse": {
+    "rue": "8 rue de la Ferme",
+    "code_postal": "77160",
+    "ville": "Provins"
+  },
+  "lien_google_maps": "https://www.google.com/maps/search/?api=1&query=8+rue+de+la+Ferme+77160+Provins",
+  "lien_avis_google": "https://www.google.com/search?q=Lefort+Plomberie+Chauffage+Provins",
+  "reseaux": {
+    "instagram": "",
+    "facebook": "https://www.facebook.com/",
+    "tiktok": ""
+  }
+}

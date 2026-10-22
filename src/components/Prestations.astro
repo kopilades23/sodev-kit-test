@@ -1,0 +1,28 @@
+---
+import Img from './Img.astro';
+import accueil from '../data/accueil.json';
+const s = accueil.prestations;
+---
+{s.afficher && s.liste?.length > 0 && (
+  <section class="section section--teinte" id="prestations">
+    <div class="conteneur">
+      <div class="section__entete">
+        {s.surtitre && <p class="surtitre">{s.surtitre}</p>}
+        <h2>{s.titre}</h2>
+        {s.intro && <p class="section__intro">{s.intro}</p>}
+      </div>
+      <ul class="cartes">
+        {s.liste.map((p) => (
+          <li class="carte">
+            {p.image && <Img src={p.image} alt="" class="carte__image" sizes="(min-width: 900px) 33vw, 100vw" widths={[480, 800]} />}
+            <div class="carte__corps">
+              <h3>{p.titre}</h3>
+              {p.description && <p>{p.description}</p>}
+              {p.prix && <p class="carte__prix">{p.prix}</p>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}

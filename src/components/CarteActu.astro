@@ -1,0 +1,15 @@
+---
+import Img from './Img.astro';
+import type { CollectionEntry } from 'astro:content';
+interface Props { actu: CollectionEntry<'actualites'> }
+const { actu } = Astro.props;
+const date = actu.data.date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Paris' });
+---
+<li class="carte carte--actu">
+  {actu.data.image && <Img src={actu.data.image} alt={actu.data.image_alt ?? ''} class="carte__image" sizes="(min-width: 900px) 33vw, 100vw" widths={[480, 800]} />}
+  <div class="carte__corps">
+    <time datetime={actu.data.date.toISOString().slice(0, 10)}>{date}</time>
+    <h3><a href={`/actualites/${actu.id}/`} class="lien-etendu">{actu.data.titre}</a></h3>
+    {actu.data.resume && <p>{actu.data.resume}</p>}
+  </div>
+</li>

@@ -1,0 +1,128 @@
+{
+  "seo": {
+    "titre": "Lefort Plomberie — Plombier chauffagiste à Provins",
+    "description": "Plombier chauffagiste à Provins : dépannage rapide, rénovation de salle de bain, chaudière et pompe à chaleur. Devis gratuit sous 48 h."
+  },
+  "hero": {
+    "titre": "Votre plombier chauffagiste à Provins",
+    "sous_titre": "Dépannage rapide, salles de bain clés en main et chauffage performant. Devis gratuit et détaillé sous 48 h.",
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
+    "image_alt": "Salle de bain moderne rénovée avec douche à l'italienne"
+  },
+  "prestations": {
+    "afficher": true,
+    "surtitre": "Nos services",
+    "titre": "Ce que nous faisons pour vous",
+    "intro": "Particuliers et petits commerces, du dépannage au chantier complet.",
+    "liste": [
+      {
+        "titre": "Dépannage plomberie",
+        "description": "Fuite, canalisation bouchée, chasse d'eau, robinetterie : intervention rapide.",
+        "prix": "Déplacement offert sur Provins",
+        "image": "https://images.unsplash.com/photo-1676210133055-eab6ef033ce3"
+      },
+      {
+        "titre": "Chauffe-eau et chaudière",
+        "description": "Installation, remplacement et entretien annuel de chaudières et ballons d'eau chaude.",
+        "prix": "Entretien dès 120 €",
+        "image": "https://images.unsplash.com/photo-1620653713380-7a34b773fef8"
+      },
+      {
+        "titre": "Rénovation de salle de bain",
+        "description": "Douche à l'italienne, accessibilité, carrelage : un seul interlocuteur du début à la fin.",
+        "prix": "Sur devis gratuit",
+        "image": "https://images.unsplash.com/photo-1638799869566-b17fa794c4de"
+      }
+    ]
+  },
+  "carte": {
+    "afficher": false,
+    "menu": "La carte",
+    "surtitre": "",
+    "titre": "",
+    "intro": "",
+    "ardoise": {
+      "afficher": false,
+      "titre": "",
+      "texte": ""
+    },
+    "categories": [],
+    "note": ""
+  },
+  "atouts": {
+    "afficher": true,
+    "surtitre": "Nos engagements",
+    "titre": "Un artisan sur qui compter",
+    "liste": [
+      {
+        "titre": "Devis gratuit sous 48 h",
+        "texte": "Détaillé, poste par poste, sans surprise à la facture."
+      },
+      {
+        "titre": "Assurance décennale",
+        "texte": "Tous nos travaux sont couverts par une garantie décennale."
+      },
+      {
+        "titre": "Chantier propre",
+        "texte": "Protection des sols et nettoyage complet en fin d'intervention."
+      },
+      {
+        "titre": "Joignable 6 j/7",
+        "texte": "Du lundi au samedi, réponse dans la journée."
+      }
+    ]
+  },
+  "apropos": {
+    "afficher": true,
+    "titre": "Artisan depuis 15 ans",
+    "texte": "Thomas Lefort a fondé l'entreprise en 2011 après dix ans en tant que compagnon plombier.\n\nAujourd'hui, une équipe de trois personnes intervient dans tout le Provinois, avec le même souci du travail bien fait.",
+    "image": "https://images.unsplash.com/photo-1749532125405-70950966b0e5",
+    "image_alt": "Le plombier intervient dans une salle de bain"
+  },
+  "galerie": {
+    "afficher": true,
+    "surtitre": "Réalisations",
+    "titre": "Nos derniers chantiers",
+    "images": [
+      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14",
+      "https://images.unsplash.com/photo-1620626011761-996317b8d101",
+      "https://images.unsplash.com/photo-1587527901949-ab0341697c1e",
+      "https://images.unsplash.com/photo-1682888818696-906287d759f5",
+      "https://images.unsplash.com/photo-1564540579594-0930edb6de43",
+      "https://images.unsplash.com/photo-1676210134188-4c05dd172f89"
+    ],
+    "menu": "Réalisations"
+  },
+  "zone": {
+    "afficher": true,
+    "titre": "Provins et 30 km alentour",
+    "texte": "Nous intervenons chez les particuliers et les professionnels dans tout le Provinois. Votre commune n'est pas dans la liste ? Appelez-nous.",
+    "communes": [
+      "Provins",
+      "Longueville",
+      "Sourdun",
+      "Saint-Brice",
+      "Chalautre-la-Petite",
+      "Poigny",
+      "Rouilly",
+      "Jouy-le-Châtel",
+      "Nangis",
+      "Donnemarie-Dontilly",
+      "Bray-sur-Seine",
+      "Villiers-Saint-Georges"
+    ]
+  },
+  "avis": {
+    "afficher": true,
+    "titre": "Ils nous font confiance",
+    "texte": "Votre avis compte : retrouvez tous les avis de nos clients sur notre fiche Google."
+  },
+  "actualites": {
+    "titre": "Conseils et actualités"
+  },
+  "contact": {
+    "titre": "Un projet, une panne ?",
+    "texte": "Décrivez votre besoin en quelques lignes : nous vous rappelons sous 24 h et le devis est gratuit.",
+    "titre_formulaire": "Demander un devis gratuit"
+  }
+}

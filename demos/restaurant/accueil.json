@@ -1,0 +1,161 @@
+{
+  "seo": {
+    "titre": "La Table de Léonie — Bistrot à Fontainebleau",
+    "description": "Bistrot de saison à Fontainebleau : cuisine du marché faite maison, ardoise du jour, vins de vignerons. Déjeuner et dîner du mardi au samedi."
+  },
+  "hero": {
+    "titre": "Cuisine du marché, vins de copains",
+    "sous_titre": "Un bistrot de quartier où tout est fait maison, à deux pas du château.",
+    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+    "image_alt": "Salle du restaurant dressée pour le service du soir"
+  },
+  "prestations": {
+    "afficher": false,
+    "surtitre": "",
+    "titre": "",
+    "intro": "",
+    "liste": []
+  },
+  "carte": {
+    "afficher": true,
+    "menu": "La carte",
+    "surtitre": "Fait maison",
+    "titre": "La carte",
+    "intro": "Produits frais, producteurs de Seine-et-Marne, carte renouvelée au fil des saisons.",
+    "ardoise": {
+      "afficher": true,
+      "titre": "L'ardoise du jour",
+      "texte": "**Formule midi 21 €** — entrée + plat ou plat + dessert\n\nVelouté de potimarron, crème au lard · Joue de bœuf braisée au vin rouge, purée maison · Tarte fine aux pommes"
+    },
+    "categories": [
+      {
+        "nom": "Entrées",
+        "elements": [
+          {
+            "nom": "Œuf parfait, crème de champignons",
+            "description": "Œuf bio cuit 64 °C, girolles et noisettes torréfiées",
+            "prix": "11 €",
+            "mention": "Végétarien"
+          },
+          {
+            "nom": "Terrine de campagne maison",
+            "description": "Pickles d'oignons rouges, pain au levain",
+            "prix": "10 €",
+            "mention": ""
+          },
+          {
+            "nom": "Burrata crémeuse",
+            "description": "Courge rôtie, pesto de roquette",
+            "prix": "13 €",
+            "mention": "Végétarien"
+          }
+        ]
+      },
+      {
+        "nom": "Plats",
+        "elements": [
+          {
+            "nom": "Pavé de cabillaud",
+            "description": "Beurre blanc, poireaux fondants",
+            "prix": "24 €",
+            "mention": ""
+          },
+          {
+            "nom": "Suprême de volaille fermière",
+            "description": "Jus corsé, gratin dauphinois",
+            "prix": "22 €",
+            "mention": ""
+          },
+          {
+            "nom": "Risotto aux cèpes",
+            "description": "Parmesan 24 mois, huile de truffe",
+            "prix": "21 €",
+            "mention": "Végétarien"
+          }
+        ]
+      },
+      {
+        "nom": "Desserts",
+        "elements": [
+          {
+            "nom": "Mousse au chocolat de Léonie",
+            "description": "La recette de la maison depuis l'ouverture",
+            "prix": "9 €",
+            "mention": "Signature"
+          },
+          {
+            "nom": "Brie de Meaux affiné",
+            "description": "Mesclun et noix",
+            "prix": "8 €",
+            "mention": ""
+          },
+          {
+            "nom": "Café gourmand",
+            "description": "Trois mignardises du moment",
+            "prix": "10 €",
+            "mention": ""
+          }
+        ]
+      }
+    ],
+    "note": "Prix nets, service compris. La liste des allergènes est disponible sur simple demande."
+  },
+  "atouts": {
+    "afficher": true,
+    "surtitre": "La maison",
+    "titre": "Ce qui fait notre table",
+    "liste": [
+      {
+        "titre": "100 % fait maison",
+        "texte": "Des fonds de sauce aux desserts, tout est préparé sur place."
+      },
+      {
+        "titre": "Producteurs locaux",
+        "texte": "Légumes, volailles et fromages de Seine-et-Marne."
+      },
+      {
+        "titre": "Privatisation",
+        "texte": "Salle de 40 couverts pour vos repas de groupe et événements."
+      }
+    ]
+  },
+  "apropos": {
+    "afficher": true,
+    "titre": "Une cuisine sincère, un service attentionné",
+    "texte": "Léonie a ouvert ce bistrot en 2016 avec une idée simple : cuisiner ce que le marché offre de meilleur, sans chichi.\n\nEn salle, une équipe qui connaît chaque vin de la carte et prend le temps de vous conseiller.",
+    "image": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c",
+    "image_alt": "Le chef prépare un plat en cuisine"
+  },
+  "galerie": {
+    "afficher": true,
+    "surtitre": "En images",
+    "titre": "Dans l'assiette et en salle",
+    "images": [
+      "https://images.unsplash.com/photo-1753797981887-822b6e86d02d",
+      "https://images.unsplash.com/photo-1565895405227-31cffbe0cf86",
+      "https://images.unsplash.com/photo-1640393170451-49b916075b16",
+      "https://images.unsplash.com/photo-1663530761401-15eefb544889",
+      "https://images.unsplash.com/photo-1572715376701-98568319fd0b",
+      "https://images.unsplash.com/photo-1752852102799-b5e3a3be149f"
+    ]
+  },
+  "zone": {
+    "afficher": false,
+    "titre": "Zone d'intervention",
+    "texte": "",
+    "communes": []
+  },
+  "avis": {
+    "afficher": true,
+    "titre": "Ils nous font confiance",
+    "texte": "Votre avis compte : retrouvez tous les avis de nos clients sur notre fiche Google."
+  },
+  "actualites": {
+    "titre": "Les nouvelles du bistrot"
+  },
+  "contact": {
+    "titre": "Réserver une table",
+    "texte": "Réservation conseillée le week-end. Appelez-nous ou laissez un message avec la date, l'heure et le nombre de couverts.",
+    "titre_formulaire": "Demande de réservation"
+  }
+}

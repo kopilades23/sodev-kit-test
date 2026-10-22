@@ -1,0 +1,22 @@
+---
+import Icone from './Icone.astro';
+import accueil from '../data/accueil.json';
+const s = accueil.zone;
+const communes = (s?.communes ?? []).filter(Boolean);
+---
+{s?.afficher && (communes.length > 0 || s.texte) && (
+  <section class="section section--teinte" id="zone">
+    <div class="conteneur zone">
+      <div>
+        <p class="surtitre">Où intervenons-nous ?</p>
+        <h2>{s.titre}</h2>
+        {s.texte && <p class="section__intro">{s.texte}</p>}
+      </div>
+      {communes.length > 0 && (
+        <ul class="zone__communes">
+          {communes.map((c) => <li><Icone nom="lieu" taille={16} /> {c}</li>)}
+        </ul>
+      )}
+    </div>
+  </section>
+)}

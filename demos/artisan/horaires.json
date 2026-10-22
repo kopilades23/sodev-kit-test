@@ -1,0 +1,65 @@
+{
+  "annonce": {
+    "afficher": false,
+    "texte": ""
+  },
+  "jours": [
+    {
+      "jour": "Lundi",
+      "ferme": false,
+      "debut_1": "08:00",
+      "fin_1": "12:00",
+      "debut_2": "13:30",
+      "fin_2": "18:00"
+    },
+    {
+      "jour": "Mardi",
+      "ferme": false,
+      "debut_1": "08:00",
+      "fin_1": "12:00",
+      "debut_2": "13:30",
+      "fin_2": "18:00"
+    },
+    {
+      "jour": "Mercredi",
+      "ferme": false,
+      "debut_1": "08:00",
+      "fin_1": "12:00",
+      "debut_2": "13:30",
+      "fin_2": "18:00"
+    },
+    {
+      "jour": "Jeudi",
+      "ferme": false,
+      "debut_1": "08:00",
+      "fin_1": "12:00",
+      "debut_2": "13:30",
+      "fin_2": "18:00"
+    },
+    {
+      "jour": "Vendredi",
+      "ferme": false,
+      "debut_1": "08:00",
+      "fin_1": "12:00",
+      "debut_2": "13:30",
+      "fin_2": "17:00"
+    },
+    {
+      "jour": "Samedi",
+      "ferme": false,
+      "debut_1": "09:00",
+      "fin_1": "12:00",
+      "debut_2": "",
+      "fin_2": ""
+    },
+    {
+      "jour": "Dimanche",
+      "ferme": true,
+      "debut_1": "",
+      "fin_1": "",
+      "debut_2": "",
+      "fin_2": ""
+    }
+  ],
+  "precisions": "Horaires du standard téléphonique. Interventions sur rendez-vous."
+}

@@ -1,0 +1,59 @@
+---
+import Icone from './Icone.astro';
+import entreprise from '../data/entreprise.json';
+import accueil from '../data/accueil.json';
+import technique from '../data/technique.json';
+import { getCollection } from 'astro:content';
+
+const actus = technique.afficher_actualites ? (await getCollection('actualites')).filter((a) => a.data.publie) : [];
+import { action, telephoneLien } from '../lib/action';
+const a = accueil as any;
+const possibles: Record<string, false | { href: string; texte: string }> = {
+  prestations: a.prestations?.afficher && { href: '/#prestations', texte: a.prestations.menu || 'Prestations' },
+  carte: a.carte?.afficher && { href: '/#carte', texte: a.carte.menu || 'La carte' },
+  apropos: a.apropos?.afficher && { href: '/#a-propos', texte: 'À propos' },
+  galerie: a.galerie?.afficher && { href: '/#galerie', texte: a.galerie.menu || 'Galerie' },
+  zone: a.zone?.afficher && { href: '/#zone', texte: 'Secteur' },
+  actualites: actus.length > 0 && { href: '/actualites/', texte: 'Actualités' },
+  contact: { href: '/#contact', texte: 'Horaires & contact' },
+};
+const liens = (technique.sections ?? Object.keys(possibles)).map((k: string) => possibles[k]).filter(Boolean) as { href: string; texte: string }[];
+---
+<header class="entete">
+  <div class="conteneur entete__barre">
+    <a href="/" class="entete__marque">
+      <span class="entete__nom">{entreprise.nom}</span>
+      <span class="entete__metier">{entreprise.activite} · {entreprise.ville}</span>
+    </a>
+    <nav class="entete__nav" id="menu" aria-label="Menu principal">
+      <ul>
+        {liens.map((l) => <li><a href={l.href}>{l.texte}</a></li>)}
+      </ul>
+    </nav>
+    {action ? (
+      <a class="bouton bouton--principal entete__appel" href={action.lien} target={action.externe ? '_blank' : undefined} rel={action.externe ? 'noopener' : undefined}>{action.texte}</a>
+    ) : (
+      <a class="bouton bouton--principal entete__appel" href={telephoneLien}><Icone nom="tel" taille={18} /> <span>{entreprise.telephone}</span></a>
+    )}
+    <button class="entete__burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu">
+      <span class="ico-ouvrir"><Icone nom="menu" taille={24} /></span>
+      <span class="ico-fermer"><Icone nom="fermer" taille={24} /></span>
+    </button>
+  </div>
+</header>
+<script>
+  const bouton = document.querySelector<HTMLButtonElement>('.entete__burger');
+  const entete = document.querySelector('.entete');
+  bouton?.addEventListener('click', () => {
+    const ouvert = bouton.getAttribute('aria-expanded') === 'true';
+    bouton.setAttribute('aria-expanded', String(!ouvert));
+    bouton.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+    entete?.classList.toggle('entete--ouvert', !ouvert);
+  });
+  document.querySelectorAll('#menu a').forEach((a) =>
+    a.addEventListener('click', () => {
+      bouton?.setAttribute('aria-expanded', 'false');
+      entete?.classList.remove('entete--ouvert');
+    }),
+  );
+</script>

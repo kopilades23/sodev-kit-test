@@ -1,0 +1,21 @@
+---
+import { marked } from 'marked';
+import Img from './Img.astro';
+import accueil from '../data/accueil.json';
+const s = accueil.apropos;
+const html = s.texte ? await marked.parse(s.texte) : '';
+---
+{s.afficher && (
+  <section class="section" id="a-propos">
+    <div class="conteneur apropos">
+      <div class="apropos__image">
+        <Img src={s.image} alt={s.image_alt} sizes="(min-width: 900px) 45vw, 100vw" widths={[480, 800, 1200]} />
+      </div>
+      <div class="apropos__texte">
+        <p class="surtitre">À propos</p>
+        <h2>{s.titre}</h2>
+        <div class="prose" set:html={html} />
+      </div>
+    </div>
+  </section>
+)}

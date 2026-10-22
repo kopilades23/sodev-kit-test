@@ -1,0 +1,24 @@
+{
+  "nom": "Atelier Nuance",
+  "activite": "Coiffeur & barbier",
+  "ville": "Meaux",
+  "slogan": "Coiffure femme, homme et barbier à Meaux. Coupes sur mesure, couleurs végétales et soins, sur rendez-vous ou sans.",
+  "telephone": "01 60 00 00 02",
+  "email": "rdv@exemple.fr",
+  "action_principale": {
+    "texte": "Prendre rendez-vous",
+    "lien": "/#contact"
+  },
+  "adresse": {
+    "rue": "14 rue du Grand Cerf",
+    "code_postal": "77100",
+    "ville": "Meaux"
+  },
+  "lien_google_maps": "https://www.google.com/maps/search/?api=1&query=14+rue+du+Grand+Cerf+77100+Meaux",
+  "lien_avis_google": "https://www.google.com/search?q=Atelier+Nuance+Meaux",
+  "reseaux": {
+    "instagram": "https://www.instagram.com/",
+    "facebook": "https://www.facebook.com/",
+    "tiktok": ""
+  }
+}

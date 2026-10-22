@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import CarteActu from './CarteActu.astro';
+import technique from '../data/technique.json';
+import accueil from '../data/accueil.json';
+const actus = technique.afficher_actualites
+  ? (await getCollection('actualites')).filter((a) => a.data.publie).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3)
+  : [];
+---
+{actus.length > 0 && (
+  <section class="section section--teinte" id="actualites">
+    <div class="conteneur">
+      <div class="section__entete section__entete--ligne">
+        <div>
+          <p class="surtitre">Actualités</p>
+          <h2>{accueil.actualites?.titre || 'Nos actualités'}</h2>
+        </div>
+        <a href="/actualites/" class="lien-fleche">Toutes les actualités →</a>
+      </div>
+      <ul class="cartes">
+        {actus.map((a) => <CarteActu actu={a} />)}
+      </ul>
+    </div>
+  </section>
+)}

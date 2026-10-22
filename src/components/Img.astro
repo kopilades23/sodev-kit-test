@@ -1,0 +1,35 @@
+---
+import { Picture } from 'astro:assets';
+import { trouverImage } from '../lib/images';
+
+interface Props {
+  src?: string | null;
+  alt?: string | null;
+  widths?: number[];
+  sizes?: string;
+  class?: string;
+  eager?: boolean;
+}
+const { src, alt = '', widths = [480, 800, 1200, 1600], sizes = '100vw', class: cls, eager = false } = Astro.props;
+const image = trouverImage(src);
+// Photos de démonstration hébergées sur Unsplash (licence libre) : tailles servies par leur CDN
+const unsplash = !image && src?.startsWith('https://images.unsplash.com/');
+const base = unsplash ? src!.split('?')[0] : '';
+const u = (w: number) => `${base}?auto=format&fit=crop&w=${w}&q=72`;
+---
+{image ? (
+  <Picture
+    src={image}
+    alt={alt ?? ''}
+    widths={widths.filter((w) => w <= image.width).concat(widths.some((w) => w > image.width) ? [image.width] : [])}
+    sizes={sizes}
+    formats={['avif', 'webp']}
+    class={cls}
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : 'auto'}
+  />
+) : unsplash ? (
+  <img src={u(1200)} srcset={widths.map((w) => `${u(w)} ${w}w`).join(', ')} sizes={sizes} alt={alt ?? ''} class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />
+) : src ? (
+  <img src={src} alt={alt ?? ''} class={cls} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+) : null}

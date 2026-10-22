@@ -1,0 +1,50 @@
+---
+import Icone from './Icone.astro';
+import OuvertMaintenant from './OuvertMaintenant.astro';
+import Formulaire from './Formulaire.astro';
+import entreprise from '../data/entreprise.json';
+import accueil from '../data/accueil.json';
+import { horaires, plagesJour } from '../lib/horaires';
+const a = entreprise.adresse;
+const c = accueil.contact;
+---
+<section class="section" id="contact">
+  <div class="conteneur">
+    <div class="section__entete">
+      <p class="surtitre">Horaires & contact</p>
+      <h2>{c.titre}</h2>
+      {c.texte && <p class="section__intro">{c.texte}</p>}
+    </div>
+    <div class="contact">
+      <div class="contact__infos">
+        <div class="bloc">
+          <h3><Icone nom="horloge" /> Horaires</h3>
+          <OuvertMaintenant />
+          <table class="horaires">
+            <caption class="sr-only">Horaires d'ouverture</caption>
+            <tbody>
+              {horaires.jours.map((j, i) => (
+                <tr data-jour={i}>
+                  <th scope="row">{j.jour}</th>
+                  <td class={plagesJour(j).length ? '' : 'ferme'}>{plagesJour(j).length ? plagesJour(j).map((p) => <span>{p}</span>) : 'Fermé'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {horaires.precisions && <p class="petit">{horaires.precisions}</p>}
+        </div>
+        <div class="bloc">
+          <h3><Icone nom="lieu" /> Adresse</h3>
+          <address>{a.rue}<br />{a.code_postal} {a.ville}</address>
+          {entreprise.lien_google_maps && <a class="bouton bouton--contour" href={entreprise.lien_google_maps} target="_blank" rel="noopener">Ouvrir l'itinéraire</a>}
+        </div>
+        <div class="bloc">
+          <h3><Icone nom="tel" /> Nous joindre</h3>
+          <p><a class="lien-fort" href={`tel:${entreprise.telephone.replace(/[^\d+]/g, '')}`}>{entreprise.telephone}</a></p>
+          {entreprise.email && <p><a href={`mailto:${entreprise.email}`}>{entreprise.email}</a></p>}
+        </div>
+      </div>
+      <Formulaire />
+    </div>
+  </div>
+</section>

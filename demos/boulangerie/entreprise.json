@@ -1,0 +1,24 @@
+{
+  "nom": "Le Fournil de Jeanne",
+  "activite": "Boulangerie-pâtisserie",
+  "ville": "Avon",
+  "slogan": "Boulangerie-pâtisserie artisanale à Avon : pains au levain, viennoiseries pur beurre et gâteaux sur commande.",
+  "telephone": "01 60 00 00 04",
+  "email": "fournil@exemple.fr",
+  "action_principale": {
+    "texte": "",
+    "lien": ""
+  },
+  "adresse": {
+    "rue": "22 avenue du Général de Gaulle",
+    "code_postal": "77210",
+    "ville": "Avon"
+  },
+  "lien_google_maps": "https://www.google.com/maps/search/?api=1&query=22+avenue+du+Général+de+Gaulle+77210+Avon",
+  "lien_avis_google": "https://www.google.com/search?q=Le+Fournil+de+Jeanne+Avon",
+  "reseaux": {
+    "instagram": "https://www.instagram.com/",
+    "facebook": "https://www.facebook.com/",
+    "tiktok": ""
+  }
+}

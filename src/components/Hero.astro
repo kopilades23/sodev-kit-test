@@ -1,0 +1,32 @@
+---
+import Img from './Img.astro';
+import Icone from './Icone.astro';
+import OuvertMaintenant from './OuvertMaintenant.astro';
+import entreprise from '../data/entreprise.json';
+import { action, telephoneLien } from '../lib/action';
+import accueil from '../data/accueil.json';
+const h = accueil.hero;
+---
+<section class="hero">
+  <Img src={h.image} alt={h.image_alt} class="hero__image" eager sizes="100vw" widths={[640, 1024, 1600, 2000]} />
+  <div class="hero__voile"></div>
+  <div class="conteneur hero__contenu">
+    <p class="surtitre surtitre--clair">{entreprise.activite} à {entreprise.ville}</p>
+    <h1>{h.titre}</h1>
+    <p class="hero__texte">{h.sous_titre}</p>
+    <div class="hero__actions">
+      {action ? (
+        <>
+          <a class="bouton bouton--principal" href={action.lien} target={action.externe ? '_blank' : undefined} rel={action.externe ? 'noopener' : undefined}>{action.texte} <Icone nom="fleche" taille={18} /></a>
+          <a class="bouton bouton--clair" href={telephoneLien}><Icone nom="tel" taille={18} /> {entreprise.telephone}</a>
+        </>
+      ) : (
+        <>
+          <a class="bouton bouton--principal" href={telephoneLien}><Icone nom="tel" taille={18} /> Nous appeler</a>
+          {entreprise.lien_google_maps && <a class="bouton bouton--clair" href={entreprise.lien_google_maps} target="_blank" rel="noopener"><Icone nom="lieu" taille={18} /> Itinéraire</a>}
+        </>
+      )}
+    </div>
+    <OuvertMaintenant class="hero__ouvert" />
+  </div>
+</section>

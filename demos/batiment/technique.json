@@ -1,0 +1,32 @@
+{
+  "_note": "Fichier réservé à Sodeev : n'apparaît pas dans l'espace d'édition du client.",
+  "url": "https://sodeev-batiment.pages.dev",
+  "type_schema": "GeneralContractor",
+  "web3forms_cle": "",
+  "demo": true,
+  "sections": [
+    "prestations",
+    "atouts",
+    "galerie",
+    "zone",
+    "apropos",
+    "avis",
+    "actualites",
+    "contact"
+  ],
+  "afficher_actualites": true,
+  "credit": {
+    "texte": "Site réalisé par Sodeev",
+    "lien": "https://sodeev.com"
+  },
+  "hebergeur": {
+    "nom": "Cloudflare, Inc.",
+    "adresse": "101 Townsend Street, San Francisco, CA 94107, États-Unis",
+    "telephone": "+1 888 993 5273",
+    "site": "https://www.cloudflare.com"
+  },
+  "formulaire": {
+    "service": "Web3Forms",
+    "politique": "https://web3forms.com/privacy"
+  }
+}

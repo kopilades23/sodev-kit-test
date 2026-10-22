@@ -1,0 +1,49 @@
+---
+import { marked } from 'marked';
+import accueil from '../data/accueil.json';
+const s = accueil.carte;
+const categories = (s?.categories ?? []).filter((c) => c?.nom && c.elements?.length);
+const ardoise = s?.ardoise?.afficher && s.ardoise.texte ? await marked.parse(s.ardoise.texte) : '';
+---
+{s?.afficher && (categories.length > 0 || ardoise) && (
+  <section class="section section--teinte" id="carte">
+    <div class="conteneur">
+      <div class="section__entete">
+        {s.surtitre && <p class="surtitre">{s.surtitre}</p>}
+        <h2>{s.titre}</h2>
+        {s.intro && <p class="section__intro">{s.intro}</p>}
+      </div>
+      {ardoise && (
+        <div class="ardoise">
+          <p class="ardoise__titre">{s.ardoise.titre}</p>
+          <div class="ardoise__texte" set:html={ardoise} />
+        </div>
+      )}
+      <div class="carte-menu">
+        {categories.map((c) => (
+          <div class="carte-menu__categorie">
+            <h3>{c.nom}</h3>
+            <ul>
+              {c.elements.map((el) => (
+                <li class="carte-menu__ligne">
+                  <div class="carte-menu__entete">
+                    <span class="carte-menu__nom">{el.nom}</span>
+                    <span class="carte-menu__points" aria-hidden="true"></span>
+                    {el.prix && <span class="carte-menu__prix">{el.prix}</span>}
+                  </div>
+                  {(el.description || el.mention) && (
+                    <p class="carte-menu__desc">
+                      {el.description}
+                      {el.mention && <span class="pastille">{el.mention}</span>}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      {s.note && <p class="petit carte-menu__note">{s.note}</p>}
+    </div>
+  </section>
+)}

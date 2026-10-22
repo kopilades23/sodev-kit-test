@@ -1,0 +1,128 @@
+{
+  "seo": {
+    "titre": "Ferrand Paysage — Paysagiste à Nemours",
+    "description": "Paysagiste à Nemours : création de jardins, terrasses et allées, entretien et taille, élagage. Devis gratuit sur place dans le sud Seine-et-Marne."
+  },
+  "hero": {
+    "titre": "Un jardin qui vous ressemble, toute l'année",
+    "sous_titre": "Création, aménagement et entretien de jardins pour les particuliers et les copropriétés. Visite et devis gratuits.",
+    "image": "https://images.unsplash.com/photo-1700689807667-82630348b301",
+    "image_alt": "Allée en briques bordée de massifs fleuris"
+  },
+  "prestations": {
+    "afficher": true,
+    "surtitre": "Nos savoir-faire",
+    "titre": "De la conception à l'entretien",
+    "intro": "Un seul interlocuteur pour imaginer, réaliser et faire vivre votre jardin.",
+    "liste": [
+      {
+        "titre": "Création de jardin",
+        "description": "Plan d'aménagement, choix des végétaux adaptés à votre sol, plantations et gazon.",
+        "prix": "Étude offerte",
+        "image": "https://images.unsplash.com/photo-1633330948542-0b3bdeefcdb3"
+      },
+      {
+        "titre": "Entretien et taille",
+        "description": "Tonte, taille des haies et arbustes, désherbage, ramassage des feuilles : ponctuel ou à l'année.",
+        "prix": "Contrat dès 60 € / mois",
+        "image": "https://images.unsplash.com/photo-1617576683096-00fc8eecb3af"
+      },
+      {
+        "titre": "Terrasses, allées et murets",
+        "description": "Pierre naturelle, pavés, bois : des aménagements durables qui structurent votre extérieur.",
+        "prix": "Sur devis gratuit",
+        "image": "https://images.unsplash.com/photo-1761637823293-f96835ec5038"
+      }
+    ]
+  },
+  "carte": {
+    "afficher": false,
+    "menu": "La carte",
+    "surtitre": "",
+    "titre": "",
+    "intro": "",
+    "ardoise": {
+      "afficher": false,
+      "titre": "",
+      "texte": ""
+    },
+    "categories": [],
+    "note": ""
+  },
+  "atouts": {
+    "afficher": true,
+    "surtitre": "Nos engagements",
+    "titre": "Pourquoi nous confier votre jardin",
+    "liste": [
+      {
+        "titre": "Visite et devis gratuits",
+        "texte": "Nous venons voir votre terrain et vous remettons un devis détaillé sous une semaine."
+      },
+      {
+        "titre": "Végétaux bien choisis",
+        "texte": "Des plantes adaptées au climat local, pour un jardin qui demande moins d'eau et d'entretien."
+      },
+      {
+        "titre": "Déchets verts évacués",
+        "texte": "Nous repartons avec les tailles et les feuilles : vous n'avez rien à gérer."
+      },
+      {
+        "titre": "Crédit d'impôt",
+        "texte": "L'entretien courant de jardin peut ouvrir droit à 50 % de crédit d'impôt (service à la personne)."
+      }
+    ]
+  },
+  "apropos": {
+    "afficher": true,
+    "titre": "Paysagiste par passion depuis 2009",
+    "texte": "Julien Ferrand a créé l'entreprise après dix ans passés dans les pépinières de la région.\n\nAujourd'hui, une équipe de quatre jardiniers paysagistes intervient chez les particuliers, les copropriétés et les petites entreprises du sud Seine-et-Marne.",
+    "image": "https://images.unsplash.com/photo-1724556295135-ff92b9aa0a55",
+    "image_alt": "Une jardinière au travail dans un massif"
+  },
+  "galerie": {
+    "afficher": true,
+    "surtitre": "Réalisations",
+    "titre": "Quelques jardins récents",
+    "images": [
+      "https://images.unsplash.com/photo-1623358519330-00f61d89396b",
+      "https://images.unsplash.com/photo-1788398913509-89f16ab3ab9c",
+      "https://images.unsplash.com/photo-1734079692147-c6fc9438a2d0",
+      "https://images.unsplash.com/photo-1786348521420-e9045e5d9263",
+      "https://images.unsplash.com/photo-1692339699736-acb2a3a06b58",
+      "https://images.unsplash.com/photo-1599685315640-9ceab2f58148"
+    ],
+    "menu": "Réalisations"
+  },
+  "zone": {
+    "afficher": true,
+    "titre": "Nemours et 25 km alentour",
+    "texte": "Nous intervenons dans tout le sud Seine-et-Marne. Votre commune n'est pas dans la liste ? Appelez-nous.",
+    "communes": [
+      "Nemours",
+      "Saint-Pierre-lès-Nemours",
+      "Bagneaux-sur-Loing",
+      "Grez-sur-Loing",
+      "Bourron-Marlotte",
+      "Montigny-sur-Loing",
+      "Fontainebleau",
+      "Avon",
+      "Larchant",
+      "Souppes-sur-Loing",
+      "Château-Landon",
+      "La Chapelle-la-Reine"
+    ]
+  },
+  "avis": {
+    "afficher": true,
+    "titre": "Ils nous font confiance",
+    "texte": "Votre avis compte : retrouvez tous les avis de nos clients sur notre fiche Google."
+  },
+  "actualites": {
+    "titre": "Conseils de saison"
+  },
+  "contact": {
+    "titre": "Parlez-nous de votre jardin",
+    "texte": "Décrivez votre projet en quelques lignes, ajoutez la surface approximative : nous vous rappelons pour fixer une visite gratuite.",
+    "titre_formulaire": "Demander un devis gratuit"
+  }
+}

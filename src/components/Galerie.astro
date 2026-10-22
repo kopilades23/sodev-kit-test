@@ -1,0 +1,54 @@
+---
+import Img from './Img.astro';
+import accueil from '../data/accueil.json';
+const s = accueil.galerie;
+const images = (s.images ?? []).filter(Boolean);
+---
+{s.afficher && images.length > 0 && (
+  <section class="section" id="galerie">
+    <div class="conteneur">
+      <div class="section__entete">
+        {s.surtitre && <p class="surtitre">{s.surtitre}</p>}
+        <h2>{s.titre}</h2>
+      </div>
+      <ul class={`galerie${images.length % 3 === 0 ? ' galerie--vedette' : ''}`}>
+        {images.map((src, i) => (
+          <li>
+            <button type="button" class="galerie__vignette" data-index={i} aria-label={`Agrandir la photo ${i + 1}`}>
+              <Img src={src} alt={`${s.titre} — photo ${i + 1}`} sizes="(min-width: 900px) 33vw, 50vw" widths={[400, 700, 1200]} />
+            </button>
+          </li>
+        ))}
+      </ul>
+      <dialog class="visionneuse" aria-label="Photo agrandie">
+        <button type="button" class="visionneuse__fermer" aria-label="Fermer">×</button>
+        <button type="button" class="visionneuse__nav visionneuse__nav--prec" aria-label="Photo précédente">‹</button>
+        <img alt="" />
+        <button type="button" class="visionneuse__nav visionneuse__nav--suiv" aria-label="Photo suivante">›</button>
+      </dialog>
+    </div>
+  </section>
+)}
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('.visionneuse');
+  const vignettes = [...document.querySelectorAll<HTMLButtonElement>('.galerie__vignette')];
+  if (dialog && vignettes.length) {
+    const img = dialog.querySelector('img')!;
+    let courant = 0;
+    const afficher = (i: number) => {
+      courant = (i + vignettes.length) % vignettes.length;
+      const source = vignettes[courant].querySelector('img')!;
+      img.src = source.currentSrc || source.src;
+      img.alt = source.alt;
+    };
+    vignettes.forEach((v, i) => v.addEventListener('click', () => { afficher(i); dialog.showModal(); }));
+    dialog.querySelector('.visionneuse__fermer')!.addEventListener('click', () => dialog.close());
+    dialog.querySelector('.visionneuse__nav--prec')!.addEventListener('click', () => afficher(courant - 1));
+    dialog.querySelector('.visionneuse__nav--suiv')!.addEventListener('click', () => afficher(courant + 1));
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') afficher(courant - 1);
+      if (e.key === 'ArrowRight') afficher(courant + 1);
+    });
+  }
+</script>

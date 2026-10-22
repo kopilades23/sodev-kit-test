@@ -1,0 +1,39 @@
+---
+import { horairesCompacts } from '../lib/horaires';
+interface Props { class?: string }
+const { class: cls = '' } = Astro.props;
+---
+<p class={`ouvert ${cls}`} data-horaires={JSON.stringify(horairesCompacts())} hidden aria-live="polite"></p>
+<script>
+  const JOURS = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
+  const fr = (h: string) => { const [a, b] = h.split(':'); return `${Number(a)} h${b === '00' ? '' : ' ' + b}`; };
+  function maintenantParis() {
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Paris', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    const get = (t: string) => parts.find((p) => p.type === t)?.value ?? '';
+    const jour = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(get('weekday'));
+    return { jour, heure: `${get('hour')}:${get('minute')}` };
+  }
+  document.querySelectorAll<HTMLElement>('.ouvert').forEach((el) => {
+    const semaine: [string, string][][] = JSON.parse(el.dataset.horaires || '[]');
+    if (!semaine.length) return;
+    const { jour, heure } = maintenantParis();
+    const aujourdhui = semaine[jour] || [];
+    const enCours = aujourdhui.find(([a, b]) => heure >= a && heure < b);
+    if (enCours) {
+      el.textContent = `Ouvert maintenant · jusqu'à ${fr(enCours[1])}`;
+      el.classList.add('ouvert--oui');
+    } else {
+      let msg = 'Fermé actuellement';
+      const plusTard = aujourdhui.find(([a]) => a > heure);
+      if (plusTard) msg += ` · ouvre à ${fr(plusTard[0])}`;
+      else for (let i = 1; i <= 7; i++) {
+        const j = (jour + i) % 7;
+        if (semaine[j]?.length) { msg += ` · ouvre ${i === 1 ? 'demain' : JOURS[j]} à ${fr(semaine[j][0][0])}`; break; }
+      }
+      el.textContent = msg;
+      el.classList.add('ouvert--non');
+    }
+    el.hidden = false;
+    document.querySelectorAll(`[data-jour="${jour}"]`).forEach((ligne) => ligne.classList.add('aujourdhui'));
+  });
+</script>

@@ -1,0 +1,128 @@
+{
+  "seo": {
+    "titre": "Moreau Bâtiment — Maçonnerie et rénovation à Montereau",
+    "description": "Entreprise de maçonnerie et rénovation à Montereau-Fault-Yonne : gros œuvre, extension de maison, rénovation intérieure, ravalement. Garantie décennale, devis gratuit."
+  },
+  "hero": {
+    "titre": "Construire, agrandir, rénover : du solide",
+    "sous_titre": "Maçonnerie, extensions et rénovations complètes, avec un seul interlocuteur du devis à la remise des clés.",
+    "image": "https://images.unsplash.com/photo-1593786267440-550458cc882a",
+    "image_alt": "Maison en cours d'extension avec échafaudage"
+  },
+  "prestations": {
+    "afficher": true,
+    "surtitre": "Nos métiers",
+    "titre": "Tous vos travaux de bâtiment",
+    "intro": "Particuliers, copropriétés et professionnels : neuf comme rénovation.",
+    "liste": [
+      {
+        "titre": "Maçonnerie et gros œuvre",
+        "description": "Fondations, murs porteurs, ouvertures, dalles et chapes, murs de clôture.",
+        "prix": "Devis gratuit",
+        "image": "https://images.unsplash.com/photo-1701850009190-2859ba2aeea6"
+      },
+      {
+        "titre": "Extension et surélévation",
+        "description": "Gagnez des mètres carrés : nous gérons le projet de l'étude jusqu'aux finitions.",
+        "prix": "Étude offerte",
+        "image": "https://images.unsplash.com/photo-1639953803381-e9c3f3a38253"
+      },
+      {
+        "titre": "Rénovation complète",
+        "description": "Démolition, redistribution des pièces, isolation, plâtrerie, carrelage : une maison comme neuve.",
+        "prix": "Sur devis détaillé",
+        "image": "https://images.unsplash.com/photo-1634586648651-f1fb9ec10d90"
+      }
+    ]
+  },
+  "carte": {
+    "afficher": false,
+    "menu": "La carte",
+    "surtitre": "",
+    "titre": "",
+    "intro": "",
+    "ardoise": {
+      "afficher": false,
+      "titre": "",
+      "texte": ""
+    },
+    "categories": [],
+    "note": ""
+  },
+  "atouts": {
+    "afficher": true,
+    "surtitre": "Nos engagements",
+    "titre": "Un chantier serein, du début à la fin",
+    "liste": [
+      {
+        "titre": "Garantie décennale",
+        "texte": "Tous nos ouvrages sont couverts par notre assurance décennale, attestation fournie avec le devis."
+      },
+      {
+        "titre": "Devis détaillé gratuit",
+        "texte": "Poste par poste, sous 10 jours après la visite. Pas de mauvaise surprise."
+      },
+      {
+        "titre": "Un seul interlocuteur",
+        "texte": "Un conducteur de travaux suit votre chantier et coordonne tous les corps de métier."
+      },
+      {
+        "titre": "Délais tenus",
+        "texte": "Un planning écrit, partagé avant le démarrage, et un chantier propre chaque soir."
+      }
+    ]
+  },
+  "apropos": {
+    "afficher": true,
+    "titre": "Une entreprise familiale depuis 1998",
+    "texte": "Fondée par Michel Moreau, l'entreprise est aujourd'hui dirigée par son fils Antoine, maçon de formation.\n\nNos huit compagnons réalisent chaque année une quarantaine de chantiers, de la petite ouverture de mur à la maison entièrement rénovée.",
+    "image": "https://images.unsplash.com/photo-1673865641469-34498379d8af",
+    "image_alt": "Maçon au travail sur un chantier"
+  },
+  "galerie": {
+    "afficher": true,
+    "surtitre": "Réalisations",
+    "titre": "Nos derniers chantiers",
+    "images": [
+      "https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12",
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28",
+      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+      "https://images.unsplash.com/photo-1621871067013-1811c7c86293",
+      "https://images.unsplash.com/photo-1674649207083-281c2517ab49"
+    ],
+    "menu": "Réalisations"
+  },
+  "zone": {
+    "afficher": true,
+    "titre": "Montereau et 30 km alentour",
+    "texte": "Nous intervenons dans le sud Seine-et-Marne et le nord de l'Yonne. Pour un projet plus éloigné, contactez-nous.",
+    "communes": [
+      "Montereau-Fault-Yonne",
+      "Varennes-sur-Seine",
+      "Cannes-Écluse",
+      "Esmans",
+      "La Grande-Paroisse",
+      "Vernou-la-Celle-sur-Seine",
+      "Moret-Loing-et-Orvanne",
+      "Champagne-sur-Seine",
+      "Fontainebleau",
+      "Nemours",
+      "Bray-sur-Seine",
+      "Pont-sur-Yonne"
+    ]
+  },
+  "avis": {
+    "afficher": true,
+    "titre": "Ils nous font confiance",
+    "texte": "Votre avis compte : retrouvez tous les avis de nos clients sur notre fiche Google."
+  },
+  "actualites": {
+    "titre": "Conseils et actualités"
+  },
+  "contact": {
+    "titre": "Un projet de travaux ?",
+    "texte": "Décrivez votre projet en quelques lignes (type de travaux, surface, délai souhaité) : nous vous rappelons pour organiser une visite.",
+    "titre_formulaire": "Demander un devis gratuit"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "seo": {
+    "titre": "Atelier Nuance — Coiffeur et barbier à Meaux",
+    "description": "Salon de coiffure femme, homme et barbier à Meaux : coupes, couleurs végétales, balayages et soins. Prise de rendez-vous en ligne ou par téléphone."
+  },
+  "hero": {
+    "titre": "La coupe qui vous ressemble",
+    "sous_titre": "Coiffure femme, homme et barbier : on prend le temps de vous écouter avant de prendre les ciseaux.",
+    "image": "https://images.unsplash.com/photo-1600948836101-f9ffda59d250",
+    "image_alt": "Intérieur du salon avec fauteuils noirs et miroirs ronds"
+  },
+  "prestations": {
+    "afficher": false,
+    "surtitre": "",
+    "titre": "",
+    "intro": "",
+    "liste": []
+  },
+  "carte": {
+    "afficher": true,
+    "menu": "Tarifs",
+    "surtitre": "Nos tarifs",
+    "titre": "Prestations et tarifs",
+    "intro": "Shampoing et coiffage inclus dans toutes nos coupes. Tarifs indicatifs selon la longueur.",
+    "ardoise": {
+      "afficher": false,
+      "titre": "",
+      "texte": ""
+    },
+    "categories": [
+      {
+        "nom": "Femme",
+        "elements": [
+          {
+            "nom": "Coupe + brushing",
+            "description": "Diagnostic, shampoing, coupe, coiffage",
+            "prix": "48 €",
+            "mention": ""
+          },
+          {
+            "nom": "Brushing",
+            "description": "Cheveux courts à longs",
+            "prix": "28 €",
+            "mention": ""
+          },
+          {
+            "nom": "Couleur racines",
+            "description": "Coloration végétale ou classique",
+            "prix": "45 €",
+            "mention": "Végétal"
+          },
+          {
+            "nom": "Balayage",
+            "description": "Effet naturel, patine incluse",
+            "prix": "à partir de 95 €",
+            "mention": ""
+          }
+        ]
+      },
+      {
+        "nom": "Homme & barbier",
+        "elements": [
+          {
+            "nom": "Coupe homme",
+            "description": "Shampoing, coupe ciseaux ou tondeuse",
+            "prix": "26 €",
+            "mention": ""
+          },
+          {
+            "nom": "Taille de barbe",
+            "description": "Tracé, serviette chaude, soin",
+            "prix": "18 €",
+            "mention": ""
+          },
+          {
+            "nom": "Coupe + barbe",
+            "description": "La formule complète",
+            "prix": "39 €",
+            "mention": "Populaire"
+          },
+          {
+            "nom": "Rasage traditionnel",
+            "description": "Au coupe-chou",
+            "prix": "30 €",
+            "mention": ""
+          }
+        ]
+      },
+      {
+        "nom": "Soins",
+        "elements": [
+          {
+            "nom": "Soin profond",
+            "description": "Masque nourrissant et massage crânien",
+            "prix": "15 €",
+            "mention": ""
+          },
+          {
+            "nom": "Lissage brésilien",
+            "description": "Sur devis après diagnostic",
+            "prix": "sur devis",
+            "mention": ""
+          }
+        ]
+      }
+    ],
+    "note": "Tarif étudiant : −15 % sur présentation de la carte, du mardi au jeudi."
+  },
+  "atouts": {
+    "afficher": true,
+    "surtitre": "L'atelier",
+    "titre": "Pourquoi nos clients reviennent",
+    "liste": [
+      {
+        "titre": "Diagnostic offert",
+        "texte": "Avant chaque couleur, nous analysons vos cheveux et vous conseillons."
+      },
+      {
+        "titre": "Colorations végétales",
+        "texte": "Une alternative douce, sans ammoniaque."
+      },
+      {
+        "titre": "Avec ou sans rendez-vous",
+        "texte": "Créneaux sans rendez-vous le mercredi et le samedi matin."
+      }
+    ]
+  },
+  "apropos": {
+    "afficher": true,
+    "titre": "Un salon à taille humaine",
+    "texte": "Chez Atelier Nuance, chaque rendez-vous commence par un vrai échange : votre style, votre quotidien, le temps que vous voulez consacrer à vos cheveux.\n\nNous travaillons avec des colorations végétales et des produits fabriqués en France.",
+    "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df",
+    "image_alt": "Coiffeuse réalisant un brushing"
+  },
+  "galerie": {
+    "afficher": true,
+    "surtitre": "Nos réalisations",
+    "titre": "Avant de partir, on fait la photo",
+    "images": [
+      "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0",
+      "https://images.unsplash.com/photo-1605497788044-5a32c7078486",
+      "https://images.unsplash.com/photo-1560869713-7d0a29430803",
+      "https://images.unsplash.com/photo-1599351431202-1e0f0137899a",
+      "https://images.unsplash.com/photo-1580618672591-eb180b1a973f",
+      "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6"
+    ]
+  },
+  "zone": {
+    "afficher": false,
+    "titre": "Zone d'intervention",
+    "texte": "",
+    "communes": []
+  },
+  "avis": {
+    "afficher": true,
+    "titre": "Ils nous font confiance",
+    "texte": "Votre avis compte : retrouvez tous les avis de nos clients sur notre fiche Google."
+  },
+  "actualites": {
+    "titre": "Les nouvelles du salon"
+  },
+  "contact": {
+    "titre": "Prendre rendez-vous",
+    "texte": "Par téléphone, ou laissez-nous vos disponibilités : nous vous rappelons pour confirmer le créneau.",
+    "titre_formulaire": "Demande de rendez-vous"
+  }
+}

@@ -1,0 +1,20 @@
+---
+import Icone from './Icone.astro';
+import accueil from '../data/accueil.json';
+import entreprise from '../data/entreprise.json';
+const s = accueil.avis;
+---
+{s.afficher && entreprise.lien_avis_google && (
+  <section class="section section--compacte">
+    <div class="conteneur">
+      <div class="avis">
+        <div class="avis__etoiles" aria-hidden="true">
+          <Icone nom="etoile" /><Icone nom="etoile" /><Icone nom="etoile" /><Icone nom="etoile" /><Icone nom="etoile" />
+        </div>
+        <h2>{s.titre}</h2>
+        {s.texte && <p>{s.texte}</p>}
+        <a class="bouton bouton--principal" href={entreprise.lien_avis_google} target="_blank" rel="noopener">Voir nos avis Google <Icone nom="fleche" taille={18} /></a>
+      </div>
+    </div>
+  </section>
+)}

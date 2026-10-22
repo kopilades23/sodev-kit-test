@@ -1,0 +1,24 @@
+{
+  "nom": "Moreau Bâtiment",
+  "activite": "Maçonnerie & rénovation",
+  "ville": "Montereau-Fault-Yonne",
+  "slogan": "Maçonnerie, extension, rénovation complète : votre entreprise du bâtiment à Montereau et dans le sud Seine-et-Marne. Garantie décennale, devis détaillé gratuit.",
+  "telephone": "01 60 00 00 06",
+  "email": "contact@exemple.fr",
+  "action_principale": {
+    "texte": "Demander un devis",
+    "lien": "/#contact"
+  },
+  "adresse": {
+    "rue": "14 rue de la Briqueterie",
+    "code_postal": "77130",
+    "ville": "Montereau-Fault-Yonne"
+  },
+  "lien_google_maps": "https://www.google.com/maps/search/?api=1&query=14+rue+de+la+Briqueterie+77130+Montereau-Fault-Yonne",
+  "lien_avis_google": "https://www.google.com/search?q=Moreau+Bâtiment+Montereau-Fault-Yonne",
+  "reseaux": {
+    "instagram": "",
+    "facebook": "https://www.facebook.com/",
+    "tiktok": ""
+  }
+}

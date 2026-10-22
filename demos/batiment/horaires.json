@@ -1,0 +1,65 @@
+{
+  "annonce": {
+    "afficher": false,
+    "texte": ""
+  },
+  "jours": [
+    {
+      "jour": "Lundi",
+      "ferme": false,
+      "debut_1": "07:30",
+      "fin_1": "12:00",
+      "debut_2": "13:00",
+      "fin_2": "17:30"
+    },
+    {
+      "jour": "Mardi",
+      "ferme": false,
+      "debut_1": "07:30",
+      "fin_1": "12:00",
+      "debut_2": "13:00",
+      "fin_2": "17:30"
+    },
+    {
+      "jour": "Mercredi",
+      "ferme": false,
+      "debut_1": "07:30",
+      "fin_1": "12:00",
+      "debut_2": "13:00",
+      "fin_2": "17:30"
+    },
+    {
+      "jour": "Jeudi",
+      "ferme": false,
+      "debut_1": "07:30",
+      "fin_1": "12:00",
+      "debut_2": "13:00",
+      "fin_2": "17:30"
+    },
+    {
+      "jour": "Vendredi",
+      "ferme": false,
+      "debut_1": "07:30",
+      "fin_1": "12:00",
+      "debut_2": "13:00",
+      "fin_2": "16:30"
+    },
+    {
+      "jour": "Samedi",
+      "ferme": true,
+      "debut_1": "",
+      "fin_1": "",
+      "debut_2": "",
+      "fin_2": ""
+    },
+    {
+      "jour": "Dimanche",
+      "ferme": true,
+      "debut_1": "",
+      "fin_1": "",
+      "debut_2": "",
+      "fin_2": ""
+    }
+  ],
+  "precisions": "Horaires du bureau. Visites de chantier sur rendez-vous, y compris le samedi matin."
+}

@@ -1,0 +1,13 @@
+---
+import Icone from './Icone.astro';
+import entreprise from '../data/entreprise.json';
+import { action, telephoneLien } from '../lib/action';
+---
+<div class="barre-mobile" aria-label="Actions rapides">
+  <a href={telephoneLien}><Icone nom="tel" taille={18} /> Appeler</a>
+  {action ? (
+    <a href={action.lien} target={action.externe ? '_blank' : undefined} rel={action.externe ? 'noopener' : undefined}>{action.texte}</a>
+  ) : entreprise.lien_google_maps && (
+    <a href={entreprise.lien_google_maps} target="_blank" rel="noopener"><Icone nom="lieu" taille={18} /> Itinéraire</a>
+  )}
+</div>

@@ -1,0 +1,65 @@
+{
+  "annonce": {
+    "afficher": true,
+    "texte": "Galettes des rois : commandes ouvertes dès le 15 décembre."
+  },
+  "jours": [
+    {
+      "jour": "Lundi",
+      "ferme": false,
+      "debut_1": "06:30",
+      "fin_1": "13:30",
+      "debut_2": "15:30",
+      "fin_2": "19:30"
+    },
+    {
+      "jour": "Mardi",
+      "ferme": false,
+      "debut_1": "06:30",
+      "fin_1": "13:30",
+      "debut_2": "15:30",
+      "fin_2": "19:30"
+    },
+    {
+      "jour": "Mercredi",
+      "ferme": true,
+      "debut_1": "",
+      "fin_1": "",
+      "debut_2": "",
+      "fin_2": ""
+    },
+    {
+      "jour": "Jeudi",
+      "ferme": false,
+      "debut_1": "06:30",
+      "fin_1": "13:30",
+      "debut_2": "15:30",
+      "fin_2": "19:30"
+    },
+    {
+      "jour": "Vendredi",
+      "ferme": false,
+      "debut_1": "06:30",
+      "fin_1": "13:30",
+      "debut_2": "15:30",
+      "fin_2": "19:30"
+    },
+    {
+      "jour": "Samedi",
+      "ferme": false,
+      "debut_1": "06:30",
+      "fin_1": "19:30",
+      "debut_2": "",
+      "fin_2": ""
+    },
+    {
+      "jour": "Dimanche",
+      "ferme": false,
+      "debut_1": "07:00",
+      "fin_1": "13:30",
+      "debut_2": "",
+      "fin_2": ""
+    }
+  ],
+  "precisions": "Fermé le mercredi. Ouvert les jours fériés le matin."
+}

@@ -1,0 +1,24 @@
+{
+  "nom": "Maison Verveine",
+  "activite": "Fleuriste",
+  "ville": "Melun",
+  "slogan": "Bouquets de saison, compositions sur mesure et fleurs pour tous vos moments.",
+  "telephone": "01 23 45 67 89",
+  "email": "contact@exemple.fr",
+  "action_principale": {
+    "texte": "",
+    "lien": ""
+  },
+  "adresse": {
+    "rue": "12 rue des Lilas",
+    "code_postal": "77000",
+    "ville": "Melun"
+  },
+  "lien_google_maps": "https://www.google.com/maps/search/?api=1&query=12+rue+des+Lilas+77000+Melun",
+  "lien_avis_google": "https://www.google.com/search?q=Maison+Verveine+Melun",
+  "reseaux": {
+    "instagram": "https://www.instagram.com/",
+    "facebook": "",
+    "tiktok": ""
+  }
+}
