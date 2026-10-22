@@ -4,7 +4,7 @@
     "description": "Fleuriste à Melun : bouquets de saison, compositions pour mariages et événements, livraison locale. Ouvert du mardi au dimanche."
   },
   "hero": {
-    "titre": "Des fleurs qui racontent la saison",
+    "titre": "Une nouvelle saison",
     "sous_titre": "Bouquets frais, compositions sur mesure et conseils de fleuriste, au cœur de Melun.",
     "image": "/images/hero.jpg",
     "image_alt": "Bouquet de fleurs de saison sur le comptoir de la boutique"
@@ -40,14 +40,10 @@
     "menu": "La carte",
     "surtitre": "À la carte",
     "titre": "Notre carte",
-    "intro": "",
     "ardoise": {
       "afficher": false,
-      "titre": "L'ardoise du jour",
-      "texte": ""
-    },
-    "categories": [],
-    "note": ""
+      "titre": "L'ardoise du jour"
+    }
   },
   "atouts": {
     "afficher": true,
@@ -90,9 +86,7 @@
   },
   "zone": {
     "afficher": false,
-    "titre": "Zone d'intervention",
-    "texte": "",
-    "communes": []
+    "titre": "Zone d'intervention"
   },
   "avis": {
     "afficher": true,
