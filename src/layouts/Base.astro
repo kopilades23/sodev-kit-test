@@ -1,0 +1,118 @@
+---
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/playfair-display';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/dm-sans';
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BarreMobile from '../components/BarreMobile.astro';
+import entreprise from '../data/entreprise.json';
+import technique from '../data/technique.json';
+import theme from '../data/theme.json';
+import accueil from '../data/accueil.json';
+import { horaires, horairesSchema } from '../lib/horaires';
+import { trouverImage } from '../lib/images';
+
+interface Props {
+  titre?: string;
+  description?: string;
+  image?: string | null;
+  noindex?: boolean;
+}
+const { titre, description, image, noindex = false } = Astro.props;
+
+const titreFinal = titre ? `${titre} — ${entreprise.nom}` : accueil.seo.titre || `${entreprise.nom} — ${entreprise.activite} à ${entreprise.ville}`;
+const descriptionFinale = description || accueil.seo.description || entreprise.slogan;
+const canonique = new URL(Astro.url.pathname, Astro.site).href;
+
+const sourcePartage = trouverImage(image) ?? trouverImage(accueil.hero.image);
+const imageDistante = [image, accueil.hero.image].find((s) => s?.startsWith('https://images.unsplash.com/'));
+const imagePartage = sourcePartage
+  ? new URL((await getImage({ src: sourcePartage, width: 1200, format: 'jpg' })).src, Astro.site).href
+  : imageDistante
+    ? `${imageDistante.split('?')[0]}?auto=format&fit=crop&w=1200&h=630&q=72`
+    : undefined;
+
+const polices: Record<string, string> = {
+  fraunces: "'Fraunces Variable', Georgia, serif",
+  playfair: "'Playfair Display Variable', Georgia, serif",
+  inter: "'Inter Variable', system-ui, sans-serif",
+  dmsans: "'DM Sans Variable', system-ui, sans-serif",
+};
+const variables = [
+  `--c-principale:${theme.couleur_principale}`,
+  `--c-sur-principale:${theme.couleur_sur_principale}`,
+  `--c-accent:${theme.couleur_accent}`,
+  `--c-fond:${theme.couleur_fond}`,
+  `--c-surface:${theme.couleur_surface}`,
+  `--c-texte:${theme.couleur_texte}`,
+  `--c-texte-doux:${theme.couleur_texte_doux}`,
+  `--f-titres:${polices[theme.police_titres] ?? polices.fraunces}`,
+  `--f-texte:${polices[theme.police_texte] ?? polices.inter}`,
+  `--arrondi:${theme.arrondi}`,
+].join(';');
+
+const a = entreprise.adresse;
+const reseaux = Object.values(entreprise.reseaux).filter(Boolean);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': technique.type_schema || 'LocalBusiness',
+  name: entreprise.nom,
+  description: descriptionFinale,
+  url: technique.url,
+  telephone: entreprise.telephone,
+  email: entreprise.email || undefined,
+  image: imagePartage,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: a.rue,
+    postalCode: a.code_postal,
+    addressLocality: a.ville,
+    addressCountry: 'FR',
+  },
+  hasMap: entreprise.lien_google_maps || undefined,
+  openingHoursSpecification: horairesSchema(),
+  sameAs: reseaux.length ? reseaux : undefined,
+};
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titreFinal}</title>
+    <meta name="description" content={descriptionFinale} />
+    <link rel="canonical" href={canonique} />
+    {(noindex || technique.demo) && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content={theme.couleur_principale} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content={entreprise.nom} />
+    <meta property="og:title" content={titreFinal} />
+    <meta property="og:description" content={descriptionFinale} />
+    <meta property="og:url" content={canonique} />
+    {imagePartage && <meta property="og:image" content={imagePartage} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <style set:html={`:root{${variables}}`}></style>
+  </head>
+  <body>
+    <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+    {technique.demo && (
+      <div class="bandeau-demo">Site de démonstration réalisé par <a href={technique.credit?.lien ?? 'https://sodeev.com'}>Sodeev</a> — commerce fictif</div>
+    )}
+    {horaires.annonce.afficher && horaires.annonce.texte && (
+      <div class="annonce" role="status">{horaires.annonce.texte}</div>
+    )}
+    <Header />
+    <main id="contenu">
+      <slot />
+    </main>
+    <Footer />
+    <BarreMobile />
+  </body>
+</html>
