@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import entreprise from '../data/entreprise.json';
+import legal from '../data/legal.json';
+import technique from '../data/technique.json';
+const a = entreprise.adresse;
+const individuel = /individuel|micro/i.test(legal.forme);
+---
+<Base titre="Mentions légales" noindex>
+  <section class="section">
+    <div class="conteneur conteneur--etroit prose">
+      <h1>Mentions légales</h1>
+      <h2>Éditeur du site</h2>
+      <p>
+        <strong>{legal.raison_sociale || entreprise.nom}</strong>{legal.raison_sociale && legal.raison_sociale !== entreprise.nom && <> (nom commercial : {entreprise.nom})</>}<br />
+        {legal.forme}{!individuel && legal.capital && <> au capital de {legal.capital}</>}<br />
+        Siège : {a.rue}, {a.code_postal} {a.ville}<br />
+        SIREN : {legal.siren}{legal.immatriculation && <> — {legal.immatriculation}</>}<br />
+        {legal.tva && <>N° de TVA intracommunautaire : {legal.tva}<br /></>}
+        Téléphone : {entreprise.telephone}{entreprise.email && <><br />E-mail : {entreprise.email}</>}
+      </p>
+      {legal.activite_reglementee && <p>{legal.activite_reglementee}</p>}
+      <p>Directeur ou directrice de la publication : {legal.directeur_publication}</p>
+      <h2>Hébergement</h2>
+      <p>
+        {technique.hebergeur.nom}<br />
+        {technique.hebergeur.adresse}<br />
+        Téléphone : {technique.hebergeur.telephone} — <a href={technique.hebergeur.site} rel="noopener">{technique.hebergeur.site.replace('https://', '')}</a>
+      </p>
+      {technique.credit?.texte && (
+        <>
+          <h2>Conception et réalisation</h2>
+          <p><a href={technique.credit.lien} rel="noopener">{technique.credit.texte.replace(/^Site réalisé par /, '')}</a></p>
+        </>
+      )}
+      <h2>Propriété intellectuelle</h2>
+      <p>L'ensemble des contenus de ce site (textes, photographies, logos) est la propriété de {legal.raison_sociale || entreprise.nom} ou fait l'objet d'une autorisation d'utilisation. Toute reproduction sans autorisation préalable est interdite.</p>
+      <h2>Données personnelles</h2>
+      <p>Le traitement de vos données est décrit dans notre <a href="/confidentialite/">politique de confidentialité</a>.</p>
+    </div>
+  </section>
+</Base>

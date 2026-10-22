@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CarteActu from '../../components/CarteActu.astro';
+import entreprise from '../../data/entreprise.json';
+import technique from '../../data/technique.json';
+import accueil from '../../data/accueil.json';
+const actus = (await getCollection('actualites')).filter((a) => a.data.publie).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const vide = !technique.afficher_actualites || actus.length === 0;
+---
+<Base titre="Actualités" description={`Les dernières nouvelles de ${entreprise.nom}, ${entreprise.activite.toLowerCase()} à ${entreprise.ville}.`} noindex={vide}>
+  <section class="section page-entete">
+    <div class="conteneur">
+      <p class="surtitre">Actualités</p>
+      <h1>{accueil.actualites?.titre || 'Nos actualités'}</h1>
+    </div>
+  </section>
+  <section class="section section--sans-haut">
+    <div class="conteneur">
+      {vide ? <p>Aucune actualité pour le moment.</p> : <ul class="cartes">{actus.map((a) => <CarteActu actu={a} />)}</ul>}
+    </div>
+  </section>
+</Base>

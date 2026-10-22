@@ -1,0 +1,24 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Img from '../../components/Img.astro';
+
+export async function getStaticPaths() {
+  const actus = (await getCollection('actualites')).filter((a) => a.data.publie);
+  return actus.map((actu) => ({ params: { id: actu.id }, props: { actu } }));
+}
+const { actu } = Astro.props;
+const { Content } = await render(actu);
+const date = actu.data.date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Paris' });
+---
+<Base titre={actu.data.titre} description={actu.data.resume ?? undefined} image={actu.data.image}>
+  <article class="section article">
+    <div class="conteneur conteneur--etroit">
+      <a href="/actualites/" class="lien-retour">← Toutes les actualités</a>
+      <time datetime={actu.data.date.toISOString().slice(0, 10)}>{date}</time>
+      <h1>{actu.data.titre}</h1>
+      {actu.data.image && <Img src={actu.data.image} alt={actu.data.image_alt ?? ''} class="article__image" eager sizes="(min-width: 760px) 720px, 100vw" widths={[480, 800, 1440]} />}
+      <div class="prose"><Content /></div>
+    </div>
+  </article>
+</Base>

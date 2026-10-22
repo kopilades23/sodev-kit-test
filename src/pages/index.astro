@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Prestations from '../components/Prestations.astro';
+import Carte from '../components/Carte.astro';
+import Atouts from '../components/Atouts.astro';
+import APropos from '../components/APropos.astro';
+import Galerie from '../components/Galerie.astro';
+import Zone from '../components/Zone.astro';
+import Avis from '../components/Avis.astro';
+import ActusApercu from '../components/ActusApercu.astro';
+import Contact from '../components/Contact.astro';
+import technique from '../data/technique.json';
+
+// L'ordre des sections est réglé dans technique.json (réservé Sodeev).
+// Chaque section ne s'affiche que si son interrupteur « afficher » est activé.
+const composants = { prestations: Prestations, carte: Carte, atouts: Atouts, apropos: APropos, galerie: Galerie, zone: Zone, avis: Avis, actualites: ActusApercu, contact: Contact };
+const ordre = (technique.sections ?? Object.keys(composants)) as (keyof typeof composants)[];
+if (!ordre.includes('contact')) ordre.push('contact');
+---
+<Base>
+  <Hero />
+  {ordre.map((cle) => { const Section = composants[cle]; return Section ? <Section /> : null; })}
+</Base>
