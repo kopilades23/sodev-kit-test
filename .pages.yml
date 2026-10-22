@@ -1,0 +1,326 @@
+# ============================================================================
+# Espace d'édition du client (Pages CMS — app.pagescms.org)
+# Ce fichier définit ce que le client voit et peut modifier. Rien d'autre.
+# Les fichiers technique.json et theme.json n'y figurent volontairement pas.
+# ============================================================================
+
+media:
+  input: src/assets/images
+  output: /images
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+
+settings:
+  content:
+    merge: true          # conserve les clés que le client ne voit pas
+  commit:
+    templates:
+      create: "Ajout : {filename} (espace client)"
+      update: "Modification : {filename} (espace client)"
+      delete: "Suppression : {filename} (espace client)"
+      rename: "Renommage : {oldFilename} → {newFilename} (espace client)"
+
+components:
+  photo_alt:
+    type: string
+    label: Description de la photo
+    description: "Une phrase qui décrit la photo (utile pour Google et les personnes malvoyantes). Ex. : « Bouquet de roses blanches sur le comptoir »."
+
+content:
+  # --------------------------------------------------------------------------
+  - name: horaires
+    label: "🕒 Horaires et annonce"
+    type: file
+    path: src/data/horaires.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - name: annonce
+        label: Bandeau d'annonce (en haut du site)
+        type: object
+        fields:
+          - name: afficher
+            label: Afficher le bandeau
+            type: boolean
+          - name: texte
+            label: Texte du bandeau
+            type: string
+            description: "Ex. : « Fermeture exceptionnelle le 11 novembre » ou « Nouveaux horaires d'été »."
+            options: { maxlength: 140 }
+      - name: jours
+        label: Horaires de la semaine
+        type: object
+        list:
+          min: 7
+          max: 7
+          collapsible:
+            collapsed: true
+            summary: "{jour}"
+        description: "Heures au format 09:00. Laissez le 2e créneau vide si vous ne fermez pas le midi."
+        fields:
+          - { name: jour, label: Jour, type: string, readonly: true }
+          - { name: ferme, label: Fermé toute la journée, type: boolean }
+          - name: debut_1
+            label: Ouverture
+            type: string
+            pattern: { regex: "^$|^([01]\\d|2[0-3]):[0-5]\\d$", message: "Format attendu : 09:00" }
+          - name: fin_1
+            label: Fermeture (ou pause de midi)
+            type: string
+            pattern: { regex: "^$|^([01]\\d|2[0-3]):[0-5]\\d$", message: "Format attendu : 12:30" }
+          - name: debut_2
+            label: Réouverture après la pause (facultatif)
+            type: string
+            pattern: { regex: "^$|^([01]\\d|2[0-3]):[0-5]\\d$", message: "Format attendu : 14:00" }
+          - name: fin_2
+            label: Fermeture du soir (facultatif)
+            type: string
+            pattern: { regex: "^$|^([01]\\d|2[0-3]):[0-5]\\d$", message: "Format attendu : 19:00" }
+      - name: precisions
+        label: Précisions (jours fériés, vacances…)
+        type: text
+        options: { maxlength: 280 }
+
+  # --------------------------------------------------------------------------
+  - name: actualites
+    label: "📰 Actualités"
+    type: collection
+    path: src/content/actualites
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [titre, date, publie]
+      primary: titre
+      sort: [date, titre]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: titre, label: Titre, type: string, required: true, options: { maxlength: 90 } }
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options: { format: yyyy-MM-dd }
+      - { name: publie, label: Publiée sur le site, type: boolean, default: true }
+      - { name: image, label: Photo, type: image }
+      - { name: image_alt, component: photo_alt }
+      - name: resume
+        label: Résumé (2 lignes, affiché sur la page d'accueil)
+        type: text
+        options: { maxlength: 200 }
+      - name: body
+        label: Texte de l'actualité
+        type: rich-text
+        options: { format: markdown, switcher: false }
+
+  # --------------------------------------------------------------------------
+  - name: accueil
+    label: "🏠 Page d'accueil"
+    type: file
+    path: src/data/accueil.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - name: hero
+        label: Grande image d'accueil
+        type: object
+        fields:
+          - { name: titre, label: Grand titre, type: string, required: true, options: { maxlength: 70 } }
+          - { name: sous_titre, label: Phrase d'accroche, type: text, options: { maxlength: 180 } }
+          - name: image
+            label: Photo de fond
+            type: image
+            description: "Photo horizontale, bonne qualité (idéalement 2000 px de large). Elle est assombrie en bas pour que le texte reste lisible."
+          - { name: image_alt, component: photo_alt }
+      - name: prestations
+        label: Prestations / produits
+        type: object
+        fields:
+          - { name: afficher, label: Afficher cette section, type: boolean }
+          - { name: surtitre, label: Petit titre au-dessus, type: string }
+          - { name: titre, label: Titre de la section, type: string }
+          - { name: intro, label: Phrase d'introduction, type: text, options: { maxlength: 200 } }
+          - name: liste
+            label: Prestations
+            type: object
+            list:
+              max: 9
+              collapsible: { collapsed: true, summary: "{titre}" }
+            fields:
+              - { name: titre, label: Nom, type: string, required: true }
+              - { name: description, label: Description courte, type: text, options: { maxlength: 220 } }
+              - { name: prix, label: "Prix (ex. : À partir de 25 €, Sur devis)", type: string }
+              - { name: image, label: Photo, type: image }
+      - name: carte
+        label: Carte / tarifs (restaurant, coiffure, institut…)
+        type: object
+        fields:
+          - { name: afficher, label: Afficher cette section, type: boolean }
+          - { name: menu, label: "Nom dans le menu (ex. : La carte, Tarifs)", type: string, options: { maxlength: 20 } }
+          - { name: surtitre, label: Petit titre au-dessus, type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: intro, label: Phrase d'introduction, type: text, options: { maxlength: 220 } }
+          - name: ardoise
+            label: Ardoise du jour / offre du moment
+            type: object
+            fields:
+              - { name: afficher, label: Afficher l'ardoise, type: boolean }
+              - { name: titre, label: Titre, type: string }
+              - name: texte
+                label: Contenu
+                type: rich-text
+                options: { format: markdown, switcher: false, media: false }
+          - name: categories
+            label: Catégories
+            type: object
+            list:
+              max: 12
+              collapsible: { collapsed: true, summary: "{nom}" }
+            fields:
+              - { name: nom, label: "Nom de la catégorie (ex. : Entrées, Femme)", type: string, required: true }
+              - name: elements
+                label: Lignes
+                type: object
+                list:
+                  max: 30
+                  collapsible: { collapsed: true, summary: "{nom} — {prix}" }
+                fields:
+                  - { name: nom, label: Nom, type: string, required: true }
+                  - { name: description, label: Description, type: string, options: { maxlength: 140 } }
+                  - { name: prix, label: "Prix (ex. : 12 €, sur devis)", type: string }
+                  - { name: mention, label: "Pastille (ex. : Végétarien, Nouveau)", type: string, options: { maxlength: 20 } }
+          - { name: note, label: "Note en bas (allergènes, conditions…)", type: text, options: { maxlength: 280 } }
+      - name: atouts
+        label: Points forts
+        type: object
+        fields:
+          - { name: afficher, label: Afficher cette section, type: boolean }
+          - { name: surtitre, label: Petit titre au-dessus, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: liste
+            label: Points forts
+            type: object
+            list:
+              max: 6
+              collapsible: { collapsed: true, summary: "{titre}" }
+            fields:
+              - { name: titre, label: Titre, type: string, required: true, options: { maxlength: 50 } }
+              - { name: texte, label: Texte, type: text, options: { maxlength: 160 } }
+      - name: apropos
+        label: À propos
+        type: object
+        fields:
+          - { name: afficher, label: Afficher cette section, type: boolean }
+          - { name: titre, label: Titre, type: string }
+          - name: texte
+            label: Texte
+            type: rich-text
+            options: { format: markdown, switcher: false, media: false }
+          - { name: image, label: Photo (verticale de préférence), type: image }
+          - { name: image_alt, component: photo_alt }
+      - name: galerie
+        label: Galerie photos
+        type: object
+        fields:
+          - { name: afficher, label: Afficher cette section, type: boolean }
+          - { name: surtitre, label: Petit titre au-dessus, type: string }
+          - { name: titre, label: Titre, type: string }
+          - name: images
+            label: Photos
+            type: image
+            description: "Jusqu'à 12 photos. La 1re est affichée en grand."
+            options:
+              multiple: { max: 12 }
+      - name: zone
+        label: Zone d'intervention (artisans, services à domicile)
+        type: object
+        fields:
+          - { name: afficher, label: Afficher cette section, type: boolean }
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text, options: { maxlength: 280 } }
+          - { name: communes, label: Communes, type: string, list: true }
+      - name: avis
+        label: Encart avis Google
+        type: object
+        fields:
+          - { name: afficher, label: Afficher l'encart, type: boolean }
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text, options: { maxlength: 220 } }
+      - name: actualites
+        label: Section actualités
+        type: object
+        fields:
+          - { name: titre, label: Titre, type: string }
+      - name: contact
+        label: Section contact
+        type: object
+        fields:
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text, options: { maxlength: 220 } }
+          - { name: titre_formulaire, label: "Titre du formulaire (ex. : Demander un devis)", type: string }
+      - name: seo
+        label: Référencement Google (à modifier avec votre conseiller)
+        type: object
+        fields:
+          - { name: titre, label: Titre affiché dans Google, type: string, options: { maxlength: 65 } }
+          - { name: description, label: Description affichée dans Google, type: text, options: { maxlength: 160 } }
+
+  # --------------------------------------------------------------------------
+  - name: entreprise
+    label: "📍 Coordonnées"
+    type: file
+    path: src/data/entreprise.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - { name: nom, label: Nom du commerce, type: string, required: true }
+      - { name: activite, label: "Métier (ex. : Fleuriste)", type: string, required: true }
+      - { name: ville, label: Ville, type: string, required: true }
+      - { name: slogan, label: Slogan / description courte, type: text, options: { maxlength: 180 } }
+      - { name: telephone, label: Téléphone, type: string, required: true }
+      - { name: email, label: E-mail de contact, type: string }
+      - name: action_principale
+        label: Bouton principal (laisser vide pour « Nous appeler »)
+        type: object
+        description: "Ex. : « Réserver une table » vers votre page TheFork, « Prendre rendez-vous » vers Planity, ou « Demander un devis » vers /#contact."
+        fields:
+          - { name: texte, label: Texte du bouton, type: string, options: { maxlength: 30 } }
+          - { name: lien, label: Lien du bouton, type: string }
+      - name: adresse
+        label: Adresse
+        type: object
+        fields:
+          - { name: rue, label: Numéro et rue, type: string }
+          - { name: code_postal, label: Code postal, type: string, pattern: { regex: "^\\d{5}$", message: "5 chiffres" } }
+          - { name: ville, label: Ville, type: string }
+      - { name: lien_google_maps, label: Lien Google Maps (bouton Itinéraire), type: string }
+      - { name: lien_avis_google, label: Lien vers vos avis Google, type: string }
+      - name: reseaux
+        label: Réseaux sociaux (laisser vide pour masquer)
+        type: object
+        fields:
+          - { name: instagram, label: Instagram, type: string }
+          - { name: facebook, label: Facebook, type: string }
+          - { name: tiktok, label: TikTok, type: string }
+
+  # --------------------------------------------------------------------------
+  - name: legal
+    label: "⚖️ Mentions légales"
+    type: file
+    path: src/data/legal.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - name: forme
+        label: Forme juridique
+        type: select
+        options:
+          values: ["Entrepreneur individuel", "Micro-entreprise", "EURL", "SARL", "SAS", "SASU", "SNC", "Association"]
+      - { name: raison_sociale, label: Raison sociale (ou nom et prénom), type: string }
+      - { name: capital, label: "Capital social (ex. : 5 000 €)", type: string }
+      - { name: siren, label: SIREN, type: string }
+      - { name: immatriculation, label: "Immatriculation (ex. : RCS Melun, ou RNE)", type: string }
+      - { name: tva, label: N° de TVA intracommunautaire (si applicable), type: string }
+      - { name: directeur_publication, label: Directeur ou directrice de la publication, type: string }
+      - name: activite_reglementee
+        label: Activité réglementée (ordre, autorisation…), si applicable
+        type: text
